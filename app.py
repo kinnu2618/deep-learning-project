@@ -72,7 +72,7 @@ st.markdown('Enter a movie review below, and this tool will classify it based on
 
 # About section
 with st.expander("ℹ️ About this App"):
-    st.write("This app uses a pre-trained model on the IMDB dataset to classify the sentiment of movie reviews as positive, average, or negative.")
+    st.write("This app uses a pre-trained model on the IMDB dataset to classify the sentiment of movie reviews as positive, average, or negative.The IMDB Movie Review Sentiment Classifier is a web-based application that allows users to input movie reviews and analyze the sentiment using a pre-trained deep learning model. The model classifies the review as Positive, Average, or Negative, and provides a confidence score to indicate how confident the model is about its prediction.")
 
 # User input in text area
 user_input = st.text_area('📝 Enter Your Movie Review Here:')
