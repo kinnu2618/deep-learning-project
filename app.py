@@ -2,21 +2,19 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.keras.datasets import imdb
 from tensorflow.keras.preprocessing import sequence
-from tensorflow.keras.models import load_model
+from tensorflow.keras.model import load_model
 import streamlit as st
 
-# Load the IMDB dataset word index
 word_index = imdb.get_word_index()
 reverse_word_index = {value: key for key, value in word_index.items()}
 
-# Load the pre-trained model with ReLU activation
 model = load_model('simple_rnn_imdb.h5')
 
-# Function to decode reviews
+
 def decode_review(encoded_review):
     return ' '.join([reverse_word_index.get(i - 3, '?') for i in encoded_review])
 
-# Function to preprocess user input
+
 def preprocess_text(text):
     words = text.lower().split()
     encoded_review = [word_index.get(word, 2) + 3 for word in words]
